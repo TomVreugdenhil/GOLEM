@@ -11,7 +11,7 @@ import holoviews as hv
 hv.extension('bokeh')
 import hvplot.pandas
 #conditional rich-text boxes
-from IPython.display import Markdown
+# from IPython.display import Markdown
 
 # Define Global constants
 data_URL = "http://golem.fjfi.cvut.cz/shots/{shot_no}/Diagnostics/BasicDiagnostics/{identifier}"  # TODO workaround
@@ -223,7 +223,7 @@ def DiagProcess(shot_no):
 
     units = ['V', 'T', 'kA', 'kA']
 
-    Markdown("Time series in graph in CSV format:\n"
+    print("Time series in graph in CSV format:\n"
              + "\n".join(f' - [{fn.split("/")[-1]}]({fn}) [ms, {u}]'
                          for (u, fn) in zip(units, signal_files)))
 
