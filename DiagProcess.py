@@ -98,7 +98,7 @@ def DiagProcess(shot_no):
 # U_I management
     loop_voltage = read_signal(shot_no, 'U_Loop')
     polarity_CD = read_parameter(shot_no, 'CD_orientation')
-    if polarity_CD == 'CW':                   # TODO hardcoded for now!
+    if polarity_CD != 'CW':                   # TODO hardcoded for now!
         loop_voltage *= -1  # make positive
     loop_voltage = correct_inf(loop_voltage)
     loop_voltage.loc[:t_CD] = 0
