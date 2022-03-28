@@ -127,7 +127,7 @@ def DiagProcess(shot_no):
 
 # Chamber +plasma current calculation
     dIpch = read_signal(shot_no, 'U_RogCoil')
-    if polarity_CD == 'CW':                   # TODO hardcoded for now!
+    if polarity_CD != 'CW':                   # TODO hardcoded for now!
         dIpch *= -1  # make positive
     dIpch = correct_inf(dIpch)
     dIpch -= dIpch.loc[offset_sl].mean() # subtract offset
