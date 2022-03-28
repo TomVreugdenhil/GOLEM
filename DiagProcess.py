@@ -11,7 +11,7 @@ import holoviews as hv
 hv.extension('bokeh')
 import hvplot.pandas
 #conditional rich-text boxes
-from IPython.display import Markdown
+# from IPython.display import Markdown
 
 # Define Global constants
 data_URL = "http://golem.fjfi.cvut.cz/shots/{shot_no}/Diagnostics/BasicDiagnostics/{identifier}"  # TODO workaround
@@ -89,11 +89,11 @@ def DiagProcess(shot_no):
     t_plasma_end = read_value(shot_no, source+'t_plasma_end')-10**(-3)
     plasma_lifetime = read_value(shot_no, source+'t_plasma_duration')
     if is_plasma:
-        heading = Markdown("### Plasma detected\n\n"
+        heading = ("### Plasma detected\n\n"
     f"plasma lifetime of {plasma_lifetime:.1f} ms, from {t_plasma_start:.1f} ms to {t_plasma_end:.1f} ms")
     else:
-        heading = Markdown("### No plasma detected (vacuum discharge)")
-    heading
+        heading = "### No plasma detected (vacuum discharge)"
+    print(heading)
 
 # U_I management
     loop_voltage = read_signal(shot_no, 'U_Loop')
@@ -223,7 +223,7 @@ def DiagProcess(shot_no):
 
     units = ['V', 'T', 'kA', 'kA']
 
-    Markdown("Time series in graph in CSV format:\n"
+    print("Time series in graph in CSV format:\n"
              + "\n".join(f' - [{fn.split("/")[-1]}]({fn}) [ms, {u}]'
                          for (u, fn) in zip(units, signal_files)))
 
