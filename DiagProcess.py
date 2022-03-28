@@ -86,7 +86,7 @@ def DiagProcess(shot_no):
 # Plasma detection result loading
     is_plasma = read_value(shot_no, source+'is_plasma') == 1
     t_plasma_start = read_value(shot_no, source+'t_plasma_start')
-    t_plasma_end = read_value(shot_no, source+'t_plasma_end')
+    t_plasma_end = read_value(shot_no, source+'t_plasma_end')-10**(-3)
     plasma_lifetime = read_value(shot_no, source+'t_plasma_duration')
     if is_plasma:
         heading = Markdown("### Plasma detected\n\n"
