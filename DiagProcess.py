@@ -89,11 +89,11 @@ def DiagProcess(shot_no):
     t_plasma_end = read_value(shot_no, source+'t_plasma_end')-10**(-3)
     plasma_lifetime = read_value(shot_no, source+'t_plasma_duration')
     if is_plasma:
-        heading = Markdown("### Plasma detected\n\n"
+        heading = ("### Plasma detected\n\n"
     f"plasma lifetime of {plasma_lifetime:.1f} ms, from {t_plasma_start:.1f} ms to {t_plasma_end:.1f} ms")
     else:
-        heading = Markdown("### No plasma detected (vacuum discharge)")
-    heading
+        heading = "### No plasma detected (vacuum discharge)"
+    print(heading)
 
 # U_I management
     loop_voltage = read_signal(shot_no, 'U_Loop')
