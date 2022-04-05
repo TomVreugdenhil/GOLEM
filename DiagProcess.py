@@ -184,6 +184,7 @@ def DiagProcess(shot_no):
 
 
 
+
     fig = plt.figure(dpi=200)
     for I in [Ich.rename('$I_{ch}$'), Ipch.rename('$I_{ch}+I_p$'), Ip.rename('$I_p$')]:
         ax = I.plot()
